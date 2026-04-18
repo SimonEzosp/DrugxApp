@@ -1,0 +1,7 @@
+{
+  "name": "drxgs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
