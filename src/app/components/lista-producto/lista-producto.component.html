@@ -1,0 +1,28 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>Productos registrados</ion-label>
+  </ion-list-header>
+
+  @for (p of productos; track p.id_producto) {
+    <ion-item>
+      <ion-label>
+        <h2>{{ p.nombre_producto }}</h2>
+        <p>Cantidad: {{ p.cantidad }} | Expediente: {{ p.expediente }}</p>
+        <p>Laboratorio: {{ getNombre(laboratorios, p.id_laboratorio, 'id_laboratorio', 'nombre') }} | Vigencia: {{ getNombre(vigencias, p.id_vigencia, 'id_vigencia', 'descripcion_vigencia') }}</p>
+      </ion-label>
+      <ion-badge slot="end" color="primary">{{ p.unidad?.descripcion_unidad }}</ion-badge>
+      <ion-button slot="end" fill="clear" color="warning" (click)="editar(p)">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" fill="clear" color="danger" (click)="eliminar(p.id_producto)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  }
+
+  @if (productos.length === 0) {
+    <ion-item>
+      <ion-label color="medium">No hay productos registrados</ion-label>
+    </ion-item>
+  }
+</ion-list>

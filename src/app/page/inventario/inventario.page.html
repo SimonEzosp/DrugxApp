@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inventario</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tabActual">
+      <ion-segment-button value="productos">
+        <ion-label>Productos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="catalogos">
+        <ion-label>Catálogos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (tabActual === 'productos') {
+    <ion-grid>
+      <app-producto 
+        [productoEditar]="productoEditar"
+        (productoGuardado)="onProductoGuardado($event)">
+      </app-producto>
+      <app-lista-productos 
+        #listaProductos
+        (editarProducto)="onEditarProducto($event)">
+      </app-lista-productos>
+    </ion-grid>
+  }
+  @if (tabActual === 'catalogos') {
+    <ion-grid>
+      <app-unidades></app-unidades>
+      <app-vias></app-vias>
+      <app-vigencias></app-vigencias>
+      <app-laboratorios></app-laboratorios>
+    </ion-grid>
+  }
+</ion-content>

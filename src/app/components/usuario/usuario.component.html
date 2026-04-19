@@ -1,0 +1,44 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>Gestión de usuarios</ion-label>
+  </ion-list-header>
+
+  @for (u of usuarios; track u.idusuario) {
+    <ion-item>
+      <ion-label>
+        <h2>{{ u.username }}</h2>
+      </ion-label>
+      <ion-badge slot="end" color="primary">{{ getRolNombre(u.rol) }}</ion-badge>
+      <ion-button slot="end" fill="clear" color="danger" (click)="eliminar(u.idusuario)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  }
+  
+  <ion-text>
+    <h1>Crear usuario</h1>
+  </ion-text>
+  <ion-item>
+    <ion-input placeholder="Usuario" [(ngModel)]="nuevo.username" labelPlacement="floating" label="Usuario"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Contraseña" type="password" [(ngModel)]="nuevo.password" labelPlacement="floating" label="Contraseña"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Rol</ion-label>
+    <ion-select [(ngModel)]="nuevo.rol" placeholder="Seleccionar">
+      @for (r of roles; track r.idrol) {
+        <ion-select-option [value]="r.idrol">{{ r.nombrerol }}</ion-select-option>
+      }
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-button expand="block" (click)="agregar()">
+      Agregar usuario
+    </ion-button>
+  </ion-item>
+
+</ion-list>

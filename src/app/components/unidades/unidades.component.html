@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>Unidades de medida</ion-label>
+  </ion-list-header>
+
+  @for (u of unidades; track u.id_unidad) {
+    <ion-item>
+      <ion-label>{{ u.descripcion_unidad }}</ion-label>
+    </ion-item>
+  }
+
+  <ion-item>
+    <ion-input
+      placeholder="Nueva unidad"
+      [(ngModel)]="nueva"
+      labelPlacement="floating">
+    </ion-input>
+    <ion-button slot="end" (click)="agregar()">
+      Agregar
+    </ion-button>
+  </ion-item>
+</ion-list>

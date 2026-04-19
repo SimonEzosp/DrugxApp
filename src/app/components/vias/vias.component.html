@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>Vías de administración</ion-label>
+  </ion-list-header>
+
+  @for (v of vias; track v.id_via) {
+    <ion-item>
+      <ion-label>{{ v.descripcion_via }}</ion-label>
+    </ion-item>
+  }
+
+  <ion-item>
+    <ion-input
+      placeholder="Nueva vía"
+      [(ngModel)]="nueva"
+      labelPlacement="floating">
+    </ion-input>
+    <ion-button slot="end" (click)="agregar()">
+      Agregar
+    </ion-button>
+  </ion-item>
+</ion-list>

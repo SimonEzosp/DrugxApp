@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>Laboratorios</ion-label>
+  </ion-list-header>
+
+  @for (l of laboratorios; track l.id_laboratorio) {
+    <ion-item>
+      <ion-label>{{ l.nombre }}</ion-label>
+    </ion-item>
+  }
+
+  <ion-item>
+    <ion-input
+      placeholder="Nuevo laboratorio"
+      [(ngModel)]="nuevo"
+      labelPlacement="floating">
+    </ion-input>
+    <ion-button slot="end" (click)="agregar()">
+      Agregar
+    </ion-button>
+  </ion-item>
+</ion-list>

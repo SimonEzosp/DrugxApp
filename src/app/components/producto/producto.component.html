@@ -1,0 +1,88 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label position="floating">Nombre del producto</ion-label>
+        <ion-input type="text" [(ngModel)]="producto.nombre_producto"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label position="floating">Cantidad</ion-label>
+        <ion-input type="number" [(ngModel)]="producto.cantidad"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label>Unidad de medida</ion-label>
+        <ion-select [(ngModel)]="producto.id_unidad" placeholder="Seleccionar">
+          @for (u of unidades; track u.id_unidad) {
+            <ion-select-option [value]="u.id_unidad">{{ u.descripcion_unidad }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label>Vía de administración</ion-label>
+        <ion-select [(ngModel)]="producto.id_via" placeholder="Seleccionar">
+          @for (v of vias; track v.id_via) {
+            <ion-select-option [value]="v.id_via">{{ v.descripcion_via }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label>Vigencia</ion-label>
+        <ion-select [(ngModel)]="producto.id_vigencia" placeholder="Seleccionar">
+          @for (v of vigencias; track v.id_vigencia) {
+            <ion-select-option [value]="v.id_vigencia">{{ v.descripcion_vigencia }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label>Laboratorio</ion-label>
+        <ion-select [(ngModel)]="producto.id_laboratorio" placeholder="Seleccionar">
+          @for (l of laboratorios; track l.id_laboratorio) {
+            <ion-select-option [value]="l.id_laboratorio">{{ l.nombre }}</ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label position="floating">Expediente</ion-label>
+        <ion-input type="number" [(ngModel)]="producto.expediente"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-item>
+        <ion-label position="floating">Fecha de expedición</ion-label>
+        <ion-input 
+          type="date" 
+          [(ngModel)]="producto.fechaexpedicion">
+        </ion-input>
+      </ion-item>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button expand="block" (click)="guardar()">
+        Guardar producto
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>

@@ -1,0 +1,101 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+
+    <!-- Tarjetas resumen -->
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ventas hoy</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h1>{{ ventasDiarias }}</h1>
+            <p>Total: ${{ totalDiario.toFixed(2) }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ventas esta semana</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h1>{{ ventasSemanales }}</h1>
+            <p>Total: ${{ totalSemanal.toFixed(2) }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ventas este mes</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h1>{{ ventasMensuales }}</h1>
+            <p>Total: ${{ totalMensual.toFixed(2) }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Gráfica diaria -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ventas del día</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #chartDiario></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Gráfica semanal -->
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ventas por día (semana)</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #chartSemanal></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Gráfica mensual -->
+      <ion-col size="12" size-md="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Ventas por semana (mes)</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #chartMensual></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+  <ion-col size="12">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Usuarios</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <app-usuario></app-usuario>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+  </ion-grid>
+</ion-content>

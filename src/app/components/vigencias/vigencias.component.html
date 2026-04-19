@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>Vigencias</ion-label>
+  </ion-list-header>
+
+  @for (v of vigencias; track v.id_vigencia) {
+    <ion-item>
+      <ion-label>{{ v.descripcion_vigencia }}</ion-label>
+    </ion-item>
+  }
+
+  <ion-item>
+    <ion-input
+      placeholder="Nueva vigencia"
+      [(ngModel)]="nueva"
+      labelPlacement="floating">
+    </ion-input>
+    <ion-button slot="end" (click)="agregar()">
+      Agregar
+    </ion-button>
+  </ion-item>
+</ion-list>

@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ventas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <app-venta-formulario (ventaGuardada)="onVentaGuardada($event)"></app-venta-formulario>
+    <app-lista-venta #listaVentas></app-lista-venta>
+  </ion-grid>
+</ion-content>

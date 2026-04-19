@@ -1,0 +1,26 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Login</ion-card-title>
+    <ion-card-subtitle *ngIf="error" style="color: red;">{{ error }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-input
+      type="text"
+      label="Usuario"
+      [(ngModel)]="username"
+      labelPlacement="floating">
+    </ion-input>
+
+    <ion-input
+      type="password"
+      label="Contraseña"
+      [(ngModel)]="password"
+      labelPlacement="floating">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+
+    <ion-button expand="block" (click)="onLogin()" style="margin-top: 16px;">
+      Ingresar
+    </ion-button>
+  </ion-card-content>
+</ion-card>
