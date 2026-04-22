@@ -20,7 +20,7 @@ export class DashboardPage implements OnInit {
   @ViewChild('chartSemanal') chartSemanal!: ElementRef;
   @ViewChild('chartMensual') chartMensual!: ElementRef;
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
 
   totalDiario = 0;
   totalSemanal = 0;

@@ -17,7 +17,7 @@ import { trashOutline } from 'ionicons/icons';
 })
 export class ListaVentaComponent implements OnInit {
   productos: any[] = [];
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
   ventas: any[] = [];
 
   constructor(private http: HttpClient) {

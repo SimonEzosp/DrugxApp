@@ -18,7 +18,7 @@ import { trashOutline } from 'ionicons/icons';
 })
 export class UsuarioComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
   usuarios: any[] = [];
   roles: any[] = [];
 

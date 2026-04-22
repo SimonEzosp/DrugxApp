@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 export class AuthService {
 
   rolCambiado = new Subject<void>();
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
 
   constructor(private http: HttpClient) {}
 

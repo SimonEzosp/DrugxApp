@@ -14,7 +14,7 @@ import {
 })
 export class VigenciasComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
   vigencias: any[] = [];
   nueva = '';
 
@@ -30,7 +30,10 @@ export class VigenciasComponent implements OnInit {
 
   agregar() {
     if (!this.nueva.trim()) return;
-    this.http.post(`${this.apiUrl}/vigencias`, { descripcion_vigencia: this.nueva }).subscribe(() => {
+    this.http.post(`${this.apiUrl}/vigencias`, {
+      id_vigencia: Date.now(), 
+      descripcion_vigencia: this.nueva 
+    }).subscribe(() => {
       this.nueva = '';
       this.cargar();
     });

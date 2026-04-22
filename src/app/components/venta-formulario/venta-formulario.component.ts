@@ -18,7 +18,7 @@ export class VentaFormularioComponent implements OnInit {
 
   @Output() ventaGuardada = new EventEmitter<any>();
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
 
   venta = {
     id_venta: 0,

@@ -17,7 +17,7 @@ export class ProductoComponent implements OnInit, OnChanges {
   @Output() productoGuardado = new EventEmitter<any>();
   @Input() productoEditar: any = null;
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
 
   producto = {
     id_producto: 0,

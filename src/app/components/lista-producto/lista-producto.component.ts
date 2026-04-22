@@ -19,7 +19,7 @@ export class ListaProductosComponent implements OnInit {
 
   @Output() editarProducto = new EventEmitter<any>();
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
 
   productos: any[] = [];
   unidades: any[] = [];

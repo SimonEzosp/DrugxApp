@@ -14,7 +14,7 @@ import {
 })
 export class LaboratoriosComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
   laboratorios: any[] = [];
   nuevo = '';
 
@@ -30,7 +30,10 @@ export class LaboratoriosComponent implements OnInit {
 
   agregar() {
     if (!this.nuevo.trim()) return;
-    this.http.post(`${this.apiUrl}/laboratorios`, { nombre: this.nuevo }).subscribe(() => {
+    this.http.post(`${this.apiUrl}/laboratorios`, {
+      id_laboratorio:Date.now(), 
+      nombre: this.nuevo 
+    }).subscribe(() => {
       this.nuevo = '';
       this.cargar();
     });

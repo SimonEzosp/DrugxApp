@@ -14,7 +14,7 @@ import {
 })
 export class ViasComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
   vias: any[] = [];
   nueva = '';
 
@@ -30,7 +30,10 @@ export class ViasComponent implements OnInit {
 
   agregar() {
     if (!this.nueva.trim()) return;
-    this.http.post(`${this.apiUrl}/vias`, { descripcion_via: this.nueva }).subscribe(() => {
+    this.http.post(`${this.apiUrl}/vias`, { 
+      id_via:Date.now(),
+      descripcion_via: this.nueva 
+    }).subscribe(() => {
       this.nueva = '';
       this.cargar();
     });

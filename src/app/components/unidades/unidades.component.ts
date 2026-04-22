@@ -17,7 +17,7 @@ import { trashOutline } from 'ionicons/icons';
 })
 export class UnidadesComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:8000/api/v1';
+  private apiUrl = 'https://drogxsystem-production.up.railway.app/api/v1';
   unidades: any[] = [];
   nueva = '';
 
@@ -33,11 +33,22 @@ export class UnidadesComponent implements OnInit {
     this.http.get<any[]>(`${this.apiUrl}/unidades`).subscribe(d => this.unidades = d);
   }
 
+  // agregar() {
+  //   if (!this.nueva.trim()) return;
+  //   this.http.post(`${this.apiUrl}/unidades`, { descripcion_unidad: this.nueva }).subscribe(() => {
+  //     id_unidad: Date.now(),
+  //     this.nueva = '';
+  //     this.cargar();
+  //   });
+  // }
   agregar() {
-    if (!this.nueva.trim()) return;
-    this.http.post(`${this.apiUrl}/unidades`, { descripcion_unidad: this.nueva }).subscribe(() => {
-      this.nueva = '';
-      this.cargar();
-    });
-  }
+  if (!this.nueva.trim()) return;
+  this.http.post(`${this.apiUrl}/unidades`, { 
+    id_unidad: Date.now(),
+    descripcion_unidad: this.nueva 
+  }).subscribe(() => {
+    this.nueva = '';
+    this.cargar();
+  });
+}
 }
