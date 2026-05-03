@@ -1,0 +1,68 @@
+ion-header {
+  ion-toolbar {
+    --background: rgba(245, 240, 232, 0.9);
+    --backdrop-filter: blur(20px);
+    --border-color: var(--c-border);
+    --color: var(--c-text);
+
+    &:first-child ion-title {
+      font-family: var(--font);
+      font-weight: 700;
+      color: var(--c-text);
+    }
+  }
+
+  ion-toolbar:last-child {
+    --background: rgba(245, 240, 232, 0.95);
+    --padding-bottom: 8px;
+  }
+
+  ion-segment {
+    --background: var(--c-surface-2);
+    border-radius: var(--radius);
+    margin: 0 16px;
+    border: 1px solid var(--c-border);
+    padding: 3px;
+
+    ion-segment-button {
+      --background: transparent;
+      --background-checked: var(--c-surface);
+      --color: var(--c-text-muted);
+      --color-checked: var(--c-accent);
+      --border-radius: 9px;
+      --indicator-color: transparent;
+      --indicator-height: 0;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 600;
+      min-height: 36px;
+      transition: color 0.2s ease;
+
+      &.segment-button-checked {
+        border: 1px solid rgba(124, 58, 237, 0.25);
+        box-shadow:
+          0 1px 4px rgba(44, 36, 22, 0.08),
+          0 0 0 0 transparent;
+      }
+
+      ion-label { margin: 0; }
+    }
+  }
+}
+
+ion-content {
+  --background: var(--c-bg);
+
+  ion-grid {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

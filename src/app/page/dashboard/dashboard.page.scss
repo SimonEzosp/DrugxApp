@@ -1,0 +1,120 @@
+ion-header ion-toolbar {
+  --background: rgba(245, 240, 232, 0.9);
+  --backdrop-filter: blur(20px);
+  --border-color: var(--c-border);
+
+  ion-title {
+    font-family: var(--font);
+    font-weight: 700;
+    color: var(--c-text);
+  }
+}
+
+ion-content {
+  --background: var(--c-bg);
+
+  ion-grid {
+    padding: 16px;
+    --ion-grid-column-padding: 8px;
+  }
+
+  ion-row {
+    margin-bottom: 4px;
+  }
+}
+
+/* Acento único por cada KPI card */
+ion-row:first-child {
+  ion-col:nth-child(1) ion-card { --kpi-accent: #7c3aed; --kpi-accent-bg: rgba(124, 58, 237, 0.08); }
+  ion-col:nth-child(2) ion-card { --kpi-accent: #2d7a4f; --kpi-accent-bg: rgba(45, 122, 79, 0.08); }
+  ion-col:nth-child(3) ion-card { --kpi-accent: #b45309; --kpi-accent-bg: rgba(180, 83, 9, 0.08); }
+}
+
+ion-card {
+  margin: 0 0 4px;
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  box-shadow: 0 2px 12px rgba(44, 36, 22, 0.06);
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 8px 28px rgba(44, 36, 22, 0.1);
+    border-color: rgba(124, 58, 237, 0.2);
+  }
+
+  ion-card-header {
+    padding: 18px 20px 4px;
+
+    ion-card-title {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+    }
+  }
+
+  ion-card-content {
+    padding: 4px 20px 20px;
+
+    /* Número KPI */
+    h1 {
+      font-family: var(--font);
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin: 6px 0 6px;
+      color: var(--kpi-accent, var(--c-text));
+    }
+
+    p {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--c-text-muted);
+      margin: 0;
+
+      /* Resalta el valor del total */
+      &::after {
+        content: '';
+      }
+    }
+
+    canvas {
+      width: 100% !important;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* Cards de gráficas */
+ion-row:not(:first-child) ion-card {
+  ion-card-header ion-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    text-transform: none;
+    color: var(--c-text);
+  }
+}
+
+/* Stagger */
+ion-row:first-child {
+  ion-col:nth-child(1) ion-card { animation-delay: 0.04s; }
+  ion-col:nth-child(2) ion-card { animation-delay: 0.10s; }
+  ion-col:nth-child(3) ion-card { animation-delay: 0.16s; }
+}
+ion-row:nth-child(2) ion-card  { animation-delay: 0.22s; }
+ion-row:nth-child(3) {
+  ion-col:nth-child(1) ion-card { animation-delay: 0.28s; }
+  ion-col:nth-child(2) ion-card { animation-delay: 0.33s; }
+}
+ion-row:nth-child(4) ion-card  { animation-delay: 0.38s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

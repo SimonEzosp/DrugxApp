@@ -1,0 +1,92 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--c-bg);
+  background-image:
+    radial-gradient(ellipse at 25% 40%, rgba(124, 58, 237, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 70%, rgba(157, 92, 246, 0.05) 0%, transparent 50%);
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 24px auto;
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  box-shadow:
+    0 4px 6px rgba(44, 36, 22, 0.04),
+    0 20px 48px rgba(44, 36, 22, 0.10);
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+ion-card-header {
+  padding: 32px 28px 8px;
+}
+
+ion-card-title {
+  font-family: var(--font);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--c-text);
+}
+
+ion-card-subtitle {
+  margin-top: 8px;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--c-danger-bg);
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  color: var(--c-danger) !important;
+}
+
+ion-card-content {
+  padding: 16px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+ion-input {
+  --background: var(--c-bg);
+  --color: var(--c-text);
+  --placeholder-color: var(--c-text-muted);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  --highlight-color-focused: var(--c-accent);
+  --label-color: var(--c-text-muted);
+  --border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus-within {
+    border-color: var(--c-border-focus);
+    box-shadow: 0 0 0 3px var(--c-accent-bg);
+  }
+}
+
+ion-button {
+  --background: var(--c-accent);
+  --background-activated: #6d28d9;
+  --border-radius: var(--radius);
+  --box-shadow: 0 6px 20px var(--c-accent-glow);
+  --color: #ffffff;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  height: 52px;
+  margin-top: 4px !important;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

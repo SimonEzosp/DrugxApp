@@ -1,0 +1,75 @@
+/* venta-formulario.component.scss */
+
+:host { display: block; }
+
+ion-grid { padding: 0; }
+
+ion-col { padding: 6px 4px; }
+
+ion-item {
+  --background: var(--c-surface);
+  --background-hover: var(--c-surface-2);
+  --border-color: var(--c-border);
+  --border-radius: var(--radius);
+  --color: var(--c-text);
+  --highlight-color-focused: var(--c-accent);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --inner-padding-end: 0;
+  --min-height: 56px;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+  margin-bottom: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &.item-has-focus {
+    border-color: var(--c-border-focus);
+    box-shadow: 0 0 0 3px var(--c-accent-bg);
+  }
+
+  ion-label {
+    font-family: var(--font) !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    color: var(--c-text-muted) !important;
+  }
+
+  ion-input {
+    --color: var(--c-text);
+    --placeholder-color: var(--c-text-muted);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 600;
+
+    &[type="date"] { color-scheme: light; }
+  }
+
+  ion-select {
+    --color: var(--c-text);
+    --placeholder-color: var(--c-text-muted);
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+
+    &::part(icon) {
+      color: var(--c-text-muted);
+      opacity: 1;
+    }
+  }
+}
+
+ion-button {
+  --background: var(--c-accent);
+  --background-activated: #6d28d9;
+  --border-radius: var(--radius);
+  --box-shadow: 0 6px 20px var(--c-accent-glow);
+  --color: #ffffff;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  height: 52px;
+  margin-top: 4px;
+}

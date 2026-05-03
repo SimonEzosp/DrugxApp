@@ -1,3 +1,4 @@
+<!-- home.page.html -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Inicio</ion-title>
@@ -6,78 +7,88 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
- 
-    </ion-toolbar>
-
+    <ion-toolbar></ion-toolbar>
   </ion-header>
-    <ion-text>
-      <h1>Drugs Systems</h1>
-    </ion-text>     
-    <ion-grid>
-      <app-login></app-login>
-    </ion-grid>
 
+  <ion-text>
+    <h1 class="app-title">Drugs Systems</h1>
+  </ion-text>
 
+  <ion-grid class="login-grid">
+    <app-login></app-login>
+  </ion-grid>
 
-    <ion-card>
+  <ion-text>
+    <h2 class="section-title">Desarrolladores</h2>
+  </ion-text>
 
-      <ion-card-header>
-        <ion-card-title>Sobre</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-card-subtitle>Drugs Systems es un software pensado para farmacias de barrio </ion-card-subtitle>
-      </ion-card-content>
-    </ion-card>
-          <ion-text>
-        <h1>Desarrolladores</h1>
-      </ion-text>
-    <ion-grid>
+  <ion-grid class="devs-grid">
+    <ion-row>
 
-      <ion-card>
-        <ion-card-header>
-          <ion-avatar>
-            <ion-img [src]="simon" alt="Silhouette of a person's head"></ion-img>
-          </ion-avatar>          
-        </ion-card-header>
-        <ion-card-content>
-          <ion-title>Juan Sebastian Cely Moreno</ion-title>
-          <ion-card-subtitle>Links</ion-card-subtitle>
-          <ion-card-subtitle><a href="https://www.linkedin.com/in/juan-cely-moreno-23aa48195/?trk=contact-info" target="_blank">LinkedIn</a></ion-card-subtitle>
-          <ion-card-subtitle><a href="https://github.com/SebastianCely" target="_blank">GitHub</a></ion-card-subtitle>
-        </ion-card-content>
-      </ion-card>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar>
+              <ion-img [src]="jyk" alt="Juan Sebastian Cely Moreno"></ion-img>
+            </ion-avatar>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-title>Juan Sebastian Cely Moreno</ion-title>
+            <ion-card-subtitle class="links-label">Links</ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://www.linkedin.com/in/juan-cely-moreno-23aa48195/" target="_blank">LinkedIn</a>
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://github.com/SebastianCely" target="_blank">GitHub</a>
+            </ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar>
+              <ion-img [src]="jyk" alt="Kevin Stiven Santamaria Rodriguez"></ion-img>
+            </ion-avatar>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-title>Kevin Stiven Santamaria Rodriguez</ion-title>
+            <ion-card-subtitle class="links-label">Links</ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://www.linkedin.com/in/kevin-lo-75729225b/" target="_blank">LinkedIn</a>
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://github.com/santamaria314k" target="_blank">GitHub</a>
+            </ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
-      <ion-card>
-        <ion-card-header>
-          <ion-avatar>
-            <ion-img [src]="simon" alt="Silhouette of a person's head"></ion-img>
-          </ion-avatar>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-title>Kevin Stiven Santamaria Rodriguez</ion-title>
-          <ion-card-subtitle>Links</ion-card-subtitle>
-          <ion-card-subtitle><a href=" https://www.linkedin.com/in/kevin-lo-75729225b/" target="_blank">LinkedIn</a></ion-card-subtitle>
-          <ion-card-subtitle><a href="https://github.com/santamaria314k" target="_blank">GitHub</a></ion-card-subtitle>
-          <ion-card-subtitle><a href="https://ezosp.vercel.app/" target="_blank">Web</a></ion-card-subtitle>    
-        </ion-card-content>
-      </ion-card>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar>
+              <ion-img [src]="simon" alt="Simon David Rodriguez Ospina"></ion-img>
+            </ion-avatar>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-title>Simon David Rodriguez Ospina</ion-title>
+            <ion-card-subtitle class="links-label">Links</ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://www.linkedin.com/in/simon-david-rodriguez-ospina/" target="_blank">LinkedIn</a>
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://github.com/SimonEzosp" target="_blank">GitHub</a>
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+              <a href="https://ezosp.vercel.app/" target="_blank">Web</a>
+            </ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
+    </ion-row>
+  </ion-grid>
 
-      <ion-card>
-        <ion-card-header>
-          <ion-avatar>
-            <ion-img [src]="simon" alt="Silhouette of a person's head"></ion-img>
-          </ion-avatar>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-title>Simon David Rodriguez Ospina</ion-title>
-          <ion-card-subtitle>Links</ion-card-subtitle>
-          <ion-card-subtitle><a href="https://www.linkedin.com/in/simon-david-rodriguez-ospina/" target="_blank">LinkedIn</a></ion-card-subtitle>
-          <ion-card-subtitle><a href="https://github.com/SimonEzosp" target="_blank">GitHub</a></ion-card-subtitle>
-          <ion-card-subtitle><a href="https://ezosp.vercel.app/" target="_blank">Web</a></ion-card-subtitle>          
-        </ion-card-content>
-      </ion-card>
-    </ion-grid>
 </ion-content>

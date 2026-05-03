@@ -35,3 +35,29 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Pega esto en global.scss para que aplique a toda la app */
+
+:root {
+  --c-bg:        #f5f0e8;
+  --c-surface:   #faf7f2;
+  --c-surface-2: #eee8dc;
+  --c-border:    #ddd6c8;
+  --c-border-focus: #7c3aed;
+  --c-text:      #2c2416;
+  --c-text-muted:#8a7d68;
+  --c-accent:    #7c3aed;
+  --c-accent-2:  #9d5cf6;
+  --c-accent-bg: rgba(124, 58, 237, 0.08);
+  --c-accent-glow: rgba(124, 58, 237, 0.2);
+  --c-danger:    #c0392b;
+  --c-danger-bg: rgba(192, 57, 43, 0.08);
+  --c-success:   #2d7a4f;
+  --c-success-bg:rgba(45, 122, 79, 0.1);
+  --c-warning:   #b45309;
+  --c-warning-bg:rgba(180, 83, 9, 0.08);
+
+  --font: 'Sora', 'Nunito', sans-serif;
+  --radius: 12px;
+  --radius-lg: 18px;
+}
